@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Signup Portal & Data Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="Advanced Signup Form with Live Validation and LocalStorage-powered Dashboard. Built with best practices." />
+</head>
+<body>
+
+  <main class="container">
+   
+    <section class="form-section card">
+      <h1>Register Account</h1>
+      <form id="signup-form" novalidate>
+        <div class="form-group">
+          <label for="username">Username <span>*</span></label>
+          <input type="text" id="username" name="username" autocomplete="off" />
+          <small id="username-msg" aria-live="polite"></small>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email <span>*</span></label>
+          <input type="email" id="email" name="email" autocomplete="off" />
+          <small id="email-msg" aria-live="polite"></small>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password <span>*</span></label>
+          <input type="password" id="password" name="password" />
+          <small id="password-msg" aria-live="polite"></small>
+
+          <div id="loader" class="loader hidden"></div>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit">Submit</button>
+        </div>
+      </form>
+    </section>
+
+
+    <section class="dashboard-section card">
+      <header>
+        <h2>Submission Dashboard</h2>
+        <button class="clear-btn" onclick="clearEntries()">Clear All</button>
+      </header>
+
+      <div class="table-responsive">
+        <table>
+          <thead>
+            <tr>
+              <th>Username</th>
+              <th>Email</th>
+              <th>Password</th>
+              <th>Timestamp</th>
+            </tr>
+          </thead>
+          <tbody id="dashboard"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
